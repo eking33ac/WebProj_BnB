@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head Section -->
+<head>
+	<title>Briar Blossom B&amp;B</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Briar Blossom awaits you! Stay just outside Fablewood City, under the peaks of Mythwood Mountain, at our blossoming bed and breakfast that feels like a fantasy rest stop.">
+	<link href="styles/styles.css" rel="stylesheet">
+</head>
+<!-- Body Section -->
+<body>
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header Section -->
+		<header>
+			<h1><a href="index.html">Briar Blossom</a></h1>
+		</header>
+		<!-- Navigation Section -->
+		<nav>
+			<a href="index.html">Home</a><span class="desktop">&nbsp;</span>
+			<a href="rooms/pine.html">Pine Room</a><span class="desktop">&nbsp;</span>
+			<a href="rooms/mountain.html">Mountain Room</a><span class="desktop">&nbsp;</span>
+			<a href="events/weekend.html">Weekend Events</a><span class="desktop">&nbsp;</span>
+			<a href="contact.html">Contact</a>
+		</nav>
+		<!-- Main Content Section -->
+		<main>
+			<img id="outsideblossom" src="images/outsideofbriar.jpg" alt="View of Briar Blossom in a tall pine forest with benches and flowers surrounding it.">
+			<h4 id="hometag">Stay Just Outside Fablewood City, Under The Peaks of Mythwood Mountain, at Our Blossoming Bed and Breakfast That Feels Like A Fantasy Rest Stop.</h4>
+			
+			<hr>
+			
+			
+			<div>
+                <!-- Rooms Section -->
+                <h2 class="center">Rooms</h2>
+                <div class="centerButton">
+                    <button id="firstFloorButton" onclick="firstFloorButton()">First Floor Rooms</button>
+                    <table id="firstFloorTable">
+                        <tr>
+                            <th>Room Type</th>
+                            <th>Price Per Night</th>
+                            <th>Maximum Occupancy</th>
+                            <th>Mattress Type</th>
+                            <th>Room Size</th>      <!-- Square footage -->
+                            <th>Special Features</th>
+                        </tr>
+                        <tr>
+                            <td>Single Master</td>
+                            <td>$160</td>
+                            <td>1 to 3</td>
+                            <td>1 Twin Size<br>1 Pullout Twin<br>1 Plush Couch</td>
+                            <td>210 sq ft</td>
+                            <td>Windows with garden/forest view</td>
+                        </tr>
+                        <tr>
+                            <td>Double Master</td>
+                            <td>$190</td>
+                            <td>4 to 6</td>
+                            <td>2 Full Size<br>2 Plush Couch</td>
+                            <td>210 sq ft</td>
+                            <td>Windows with garden/forest view</td>
+                        </tr>
+                        <tr>
+                            <td>Single Elite</td>
+                            <td>$180</td>
+                            <td>2 to 4</td>
+                            <td>1 Queen Size<br>1 Queen Pullout<br>1 Plush Couch</td>
+                            <td>300 sq ft</td>
+                            <td>Large window with garden/forest view and plush seating</td>
+                        </tr>
+                        <tr>
+                            <td>Double Elite</td>
+                            <td>$210</td>
+                            <td>4 to 6</td>
+                            <td>2 King Size<br>2 Plush Couch</td>
+                            <td>300 sq ft</td>
+                            <td>Large window with garden/forest view and plush seating</td>
+                        </tr>
+                        <tr>
+                            <td>The Pine Room</td>
+                            <td>$280</td>
+                            <td>4 to 9</td>
+                            <td>2 Wyoming King Size<br>2 Twin Size<br>3 Plush Couch</td>
+                            <td>450 sq ft</td>
+                            <td>See <a href="rooms/pine.html" class="name">The Pine Room</a></td>
+                        </tr>
+                    </table>
+                    
+
+                    <button id="secondFloorButton" onclick="secondFloorButton()">Second Floor Rooms</button>
+                    <table id="secondFloorTable">
+                        <tr>
+                            <th>Room Type</th>
+                            <th>Price Per Night</th>
+                            <th>Maximum Occupancy</th>
+                            <th>Mattress Type</th>
+                            <th>Room Size</th>      <!-- Square footage -->
+                            <th>Special Features</th>
+                        </tr>
+
+                        <tr>
+                            <td>Single Master</td>
+                            <td>$170</td>
+                            <td>1 to 3</td>
+                            <td>1 Twin Size<br>1 Pullout Twin<br>1 Plush Couch</td>
+                            <td>210 sq ft</td>
+                            <td>Windows with wide a view of forest, garden, and/or mountains</td>
+                        </tr>
+                        <tr>
+                            <td>Double Master</td>
+                            <td>$200</td>
+                            <td>4 to 6</td>
+                            <td>2 Full Size<br>2 Plush Couch</td>
+                            <td>210 sq ft</td>
+                            <td>Windows with wide a view of forest, garden, and/or mountains</td>
+                        </tr>
+                        <tr>
+                            <td>Single Elite</td>
+                            <td>$190</td>
+                            <td>2 to 4</td>
+                            <td>1 Queen Size<br>1 Queen Pullout<br>1 Plush Couch</td>
+                            <td>300 sq ft</td>
+                            <td>Balcony above forest or garden with glorious mountain view</td>
+                        </tr>
+                        <tr>
+                            <td>Double Elite</td>
+                            <td>$220</td>
+                            <td>4 to 6</td>
+                            <td>2 King Size<br>2 Plush Couch</td>
+                            <td>300 sq ft</td>
+                            <td>Balcony above forest or garden with glorious mountain view</td>
+                        </tr>
+                        <tr>
+                            <td>The Mountain Room</td>
+                            <td>$300</td>
+                            <td>4 to 9</td>
+                            <td>2 Wyoming King Size<br>2 Twin Size<br>3 Plush Couch</td>
+                            <td>450 sq ft</td>
+                            <td>See <a href="rooms/mountain.html" class="name">The Mountain Room</a></td>
+                        </tr>
+                    </table>
+
+                    <button id="outdoorSuiteButton" onclick="outdoorSuiteButton()">Outdoor Suites</button>
+                    <table id="outdoorSuiteTable">
+                        <tr>
+                            <th>Room Type</th>
+                            <th>Price Per Night</th>
+                            <th>Maximum Occupancy</th>
+                            <th>Mattress Type</th>
+                            <th>Room Size</th>      <!-- Square footage -->
+                            <th>Special Features</th>
+                        </tr>
+                        <tr>
+                            <td>Squire's Shack</td>
+                            <td>$55 and (First Time) Your Soul</td>
+                            <td>1</td>
+                            <td>1 Twin Size</td>
+                            <td>88 sq ft</td>
+                            <td>Cheap<br>First come, first served<br>Compost toilet<br>One leak<br>Stay for up to 31 days at a time</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <hr>
+                
+                <!-- Features Section -->
+				<h2>Features</h2>
+				
+				<h3 class="center">Breakfast</h3>
+				<p>Wake up to a morning filled with warmth, flavor, and nature’s song. Each day begins with a personalized breakfast crafted from your requests the night before. While our homemade croissants are always a highlight, the rest of the meal changes daily, featuring a selection of fresh, locally sourced ingredients like golden honey, farm-fresh eggs, and seasonal fruits. Coffee, tea, and various fruit juices are complimentary! Whether you choose to enjoy your breakfast in the cozy dining area or outside in the garden, the peaceful sounds of birdsong will accompany you, making it the perfect start to your day at Briar Blossom.</p>
+                
+                <table>
+                    <tr>
+                        <th>Food Item</th>
+                        <th>Cost</th>
+                        <th>Availability</th>
+                        <th>Special Features</th>
+                    </tr>
+                    <tr>
+                        <td>Homemade Croissants</td>
+                        <td>Complimentary</td>
+                        <td>Year-Round</td>
+                        <td>Freshly baked daily, buttery, and flaky</td>
+                    </tr>
+                    <tr>
+                        <td>Seasonal Fruit Bowl</td>
+                        <td>Complimentary</td>
+                        <td>Spring-Summer</td>
+                        <td>A colorful mix of local, fresh fruits</td>
+                    </tr>
+                    <tr>
+                        <td>Farm-Fresh Eggs</td>
+                        <td>Complimentary</td>
+                        <td>Year-Round</td>
+                        <td>Prepared to your request: scrambled, fried, or poached</td>
+                    </tr>
+                    <tr>
+                        <td>Specialty Lattes</td>
+                        <td>$4 per cup</td>
+                        <td>Year-Round</td>
+                        <td>Flavors include vanilla, caramel, and hazelnut</td>
+                    </tr>
+                    <tr>
+                        <td>Herbal Tea Selection</td>
+                        <td>Complimentary</td>
+                        <td>Year-Round</td>
+                        <td>Includes chamomile, peppermint, and lavender blends</td>
+                    </tr>
+                </table>
+				
+				<div>
+					<div id="righthomefeature">
+					
+						<h3 class="center">Library</h3>
+						<p>Nestled in the heart of Briar Blossom is our enchanting library, a cozy sanctuary filled with books waiting to transport you to other worlds. Curl up in plush armchairs or on one of our cushioned couches by the crackling fireplace, its warmth creating the perfect atmosphere for reading or quiet reflection. The grand bookshelves, lined with timeless classics and hidden gems, offer a haven for bibliophiles. Tall windows let in the soft light of the morning or afternoon, framing views of the lush garden and surrounding trees. If you prefer fresh air, take your book outside and enjoy it in our tranquil garden, surrounded by flowers and the soothing sounds of nature.<br><br>
+						Whether you seek adventure in a novel or a peaceful escape, our library offers the ideal setting to unwind. The library is always open for you to explore, with cozy corners perfect for getting lost in a good book or simply relaxing. And if you’re looking for a bit more interaction, we also host occasional events—like storytelling sessions, book discussions, and creative writing workshops—that take place in the library. These events are scheduled so you can always find your quiet space when you need it, but if you’re feeling social, feel free to join in!</p>
+					</div>
+					<img src="images/library.jpg" alt="Cozy library with plush chairs, tea, and some books laying about." id="library">
+				</div>
+
+				<h3 class="center" id="clearboth">Garden</h3>
+				<p>Step into our enchanting garden, where nature's beauty surrounds you at every turn. Picture yourself gently swaying in a hammock, nestled between towering pines, while the soft melodies of birdsong fill the air. Vibrant flowers in hues of lavender, rose, and daisy bloom throughout, offering bursts of color against the lush greenery. Cozy benches are tucked under shady trees, perfect for reading, reflecting, or simply enjoying the tranquility of your surroundings.<br><br>
+                Whether you seek solitude or wish to join in on one of our garden events, such as outdoor tea parties, live music sessions, or seasonal flower workshops, the garden provides the ideal space for both relaxation and connection. Let the fresh air and the serenity of the garden soothe your spirit as you unwind at Briar Blossom.</p>
+				
+				<h3 class="center">Trails</h3>
+				<p class="caption">Step into the wild beauty of Briar Blossom, where the trails lead you through lush forests and up to breathtaking mountain peaks. Whether you’re seeking peaceful walks surrounded by towering pines or looking for an adventure with panoramic mountain views, there’s a trail waiting for you. We offer free guided hikes for group explorations, where our local experts will share the secrets of the landscape, or opt for a private, tailored hiking experience with one of our knowledgeable guides for a more personalized adventure.</p>
+                
+                <section class="subsection center">
+                    <h4 class="center">Forest Trails</h4>
+                    <p>Our serene forest trails invite you to wander beneath the shade of ancient pines, listening to the gentle rustle of leaves and the soft chirping of woodland birds. These peaceful paths are perfect for quiet reflection or leisurely exploration. <em>Guests of the <a href="rooms/pine.html">Pine Room</a> enjoy a free, private hike through these tranquil trails, guided by local expert <span class="name">Karme Hildingr</span>.</em> If you're feeling adventurous, join one of our scheduled group hikes, where you'll learn about the native flora and fauna from our knowledgeable guides.</p>
+                    <hr>
+                    <h4 class="center">Mountain Trails</h4>
+                    <p>For the adventurer seeking both beauty and challenge, our mountain trails offer a journey through rugged terrain, where ancient pines tower overhead and the air grows crisper with every step. The ascent rewards you with panoramic vistas of the valley below, where the sweeping views stretch toward distant peaks and forested ridges. <em>Guests of the <a href="rooms/pine.html">Mountain Room</a> enjoy a free, private hike through these majestic trails, guided by our expert naturalists who share the history and wonders of the landscape.</em> For those seeking a more flexible experience, private hikes can be arranged to suit your pace, or join one of our scheduled group hikes for a shared adventure with fellow explorers.</p>
+				</section>
+                
+				<h3 class="center">Events</h3>
+				<p>At Briar Blossom, we believe in the magic of shared experiences. Our curated events are designed to inspire creativity, connection, and relaxation. From cozy evenings under the stars with our local stargazers to afternoon crafting workshops where you can create something beautiful with your hands, there’s always something to delight the senses. Many of these gatherings are hosted by talented members of the Fablewood City community, bringing a sense of local charm and artistry to each experience. All events are free for our guests, with select activities also open to the public for a deeper connection with the surrounding area. Whether you're here for a weekend getaway or a local resident, come and enjoy the magic of Briar Blossom’s events.</p>
+				<h4 class="center">Upcoming</h4>
+				<div class="flexnowrap">
+                    <div class="minievent">
+                        <a href="events/weekend.html">
+                            <section>
+                                <h4 class="center normaltext">Foraging & Crafting Workshop</h4>
+                                <p class="caption">Saturday Afternoon<br>With <span class="name">Karme Hildingr</span></p>
+                                <img src="images/craft.jpg" class="minieventimg" alt="Pressed flower hanging ornament.">
+                            </section>
+                        </a>
+                    </div>
+                    <div class="minievent">
+                        <a href="events/weekend.html">
+                            <section>
+                                <h4 class="center normaltext">Night Sky Navigation</h4>
+                                <p class="caption">Saturday Night<br>With <span class="name">Althea Evander</span></p>
+                                <img src="images/night.jpg" class="minieventimg" alt="Night sky with constellations.">
+                            </section>
+                            </a>
+                    </div>
+                    <div class="minievent">
+                        <a href="events/weekend.html">
+                            <section>
+                                <h4 class="center normaltext">Tea & Tales in the Library</h4>
+                                <p class="caption">Sunday Morning<br>With <span class="name">Kleio Magni</span></p>
+                                <img src="images/storytea.jpg" class="minieventimg" alt="Steaming tea pot in a library.">
+                            </section>
+                        </a>
+                    </div>
+                    <div class="minievent">
+                        <a href="events/weekend.html">
+                            <section>
+                                <h4 class="center normaltext">String Quartet in the Garden</h4>
+                                <p class="caption">Sunday Afternoon<br>With the <span class="name">Nysa Quartet</span></p>
+                                <img src="images/cello.jpg" class="minieventimg" alt="Cello.">
+                            </section>
+                        </a>
+                    </div>
+				</div>
+				
+				<h3 class="center">Wildlife</h3>
+				<p>At Briar Blossom, nature's friends are a constant companion. From the gentle deer that often wander close to greet guests to the curious outdoor cats enjoying a quiet nap in the sun, our tranquil gardens and surrounding woodlands are home to a variety of friendly wildlife. Throughout your stay, we provide food for the local wildlife, allowing you to connect with the animals in a meaningful way for a truly immersive experience.<br><br>
+                The air is filled with the sweet melodies of birdsong throughout all seasons, and guests can enjoy seasonal birdwatching events to learn more about our local avian residents. We also celebrate the smaller wonders of nature. In the spring, we partner with local schools to host fun and educational catch-and-release bug events, where children can explore the tiny wonders of nature while learning the art of observation and caring for the smallest creatures. Additionally, in partnership with the <span class="name">Fablewood City Council</span>, we host seasonal catch-and-release events for the wider community—an opportunity to reconnect with nature and enjoy some good old-fashioned fun!</p>
+			</div>
+			<hr>
+			<div>
+				<h2><em>Find Us</em></h2>
+				<p class="caption">Through Fablewood City, past the famous clock tower of Chronical Church, taking a left at Loreleaf Library and a short trip to the Mythwood Mountain, if you stay close to the brick path past the parking lot, you’ll find nested under the mountainside the very welcoming Briar Blossom Bed and Breakfast.</p>
+			</div>
+		</main>
+		<!-- Footer Section -->
+		<footer>
+			Copyright &copy; 2024 Ezri King
+		</footer>
+	</div>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
