@@ -1,0 +1,576 @@
+/* Styles file for Briar Blossom Bed and Breakfast. */
+
+/* Hexcodes and where they are used
+#FCFFE6
+    Body: background color
+    Main: background color
+    Wrapper: background color
+#32140B
+    Body: text color
+    Heading 1: text shadow
+    Event Wrap: text color
+    Normal Text: text color
+    Wrapper: text color
+    Heading 2: text color
+    Minievent: text color
+#401D11
+    Navigation: background color
+#9EC3E6
+    Nav: normal link
+    Nav: visited link
+    Event Wrap: border color
+    Minievent: border color
+#FACF9C
+    Nav: hover link
+    Footer: text color
+    mobile Nav and Nav A: borders
+#6F2049
+    Horizontal rule: default color
+#FBF4F4
+    Heading 1: upper text shadow/blurred light above text
+#D74777
+    Wrapper: border, border top
+    Subsection: hr color
+#F27DA4
+    Heading 1: text color
+    Header: normal link
+    Header: visited link
+    Header: hover link
+    Flex No-Wrap class: border color
+#6B7641
+    Heading 4: text color
+#57140F
+    Footer: background color
+    Outside Blossom Home Image: border color
+    Subsection: border color
+#9B3154
+    Heading 3: text color
+#682742
+    Caption: text color
+#F5D2B7
+    Event Wrap: background color
+    Minievent: background color
+*/
+
+/* Blocking the Webpage */
+header, nav, main, footer {
+   display: block;		/* Put header, nav, main, and footer in their own blocks on the webpage */
+}
+
+/* Styles for the Elements */
+    /* Styles for the Body */
+    body { 
+        background-color: #FCFFE6;		/* Set background color */
+        font-family: Helvetica, Arial, sans-serif;		/* Define font family */
+        background-image: url(../images/lookoutwindow.jpeg);		/* Set background image */
+        background-repeat: no-repeat;    /* Prevent background image from repeating */
+        background-size: cover;		/* Cover the entire element with the background image */
+        background-position: center;		/* Center background image */
+        background-attachment: fixed;		/* Fix the background position */
+        color: #32140B;		/* Set text color */
+    }
+    /* Styles for Navigation */
+    nav {
+        background-color: #401D11;	/* Set background color */
+        padding: 7px 0 7px 0;		/* Set top, right, bottom, and left padding */
+        text-align: center;		/* Align text center */
+        width: 100%;		/* Set nav width to same as parent element */
+        font-size: 1.4em;		/* Set font size */
+        font-weight: bold;		/* Set font weight */
+        position: sticky;    /* Make nav bar position sticky */
+        top: 0;     /* Make nav bar stick to the top of the page when scrolling */
+    }
+    nav a { text-decoration: none; }    /* Remove underline from links */
+    nav a:link { color: #9EC3E6; }		/* Set link color */
+    nav a:visited{ color: #9EC3E6; }    /* Change link color if user has visited it before */
+    nav a:hover { color: #FACF9C; }		/* Change link color when hovering over link */
+    /* Styles for Horizontal Rules */
+    hr {
+        border-top: solid 3px #6F2049;      /* Set top border/horizontal rule color, style, and size */     
+        clear: both; /* Make horizontal rules clear floated elements (the home page picture) */
+        margin: 5px -18px;      /* Set top and bottom and left and right margins */
+    }
+    /* Styles for the Main */
+    main {
+        background-color: #FCFFE6;		/* Set background color */
+        padding: 1px 40px 20px 40px;		/* Set top, right, bottom, and left padding */ 
+        min-height: 300px;		/* Set minimum height */
+    }
+       /* Styles for Headings */
+    h1 {
+        background-image: url(../images/foggymountains.jpg);		/* Set background image */
+        background-repeat: no-repeat;		/* Make background image not repeat */
+        background-position: 0 65%;			/* Make background image prioritize showing the lower center of the image */
+        background-size: 100%;		/* Set background size to same as parent element */
+        height: 110px;		/* Set h1 height */
+        font-family: Garamond, "Times New Roman", serif;		/* Set font family */
+        font-size: 5.25em;		/* Set font size */
+        padding: 38px 0 15px 0;		/* Set top padding */
+        text-shadow: 2px 2px 1px #32140B, -3px -3px 18px #FBF4F4;		/* Add text shadow below and a blurred light above */
+        margin: 0;		/* Set bottom margin to 0px */
+        text-align: center;		/* Align text center */
+        color: #F27DA4;		/* Set text color */
+    }
+    header a {text-decoration: none;		/* Remove underline from links */}
+    header a:link {color: #F27DA4;			/* Set color for links */}
+    header a:visited {color: #F27DA4;		/* Set color for visited links */}
+    header a:hover {color: #F27DA4;		/* Set hover link color */}
+
+    h2 {
+       font-family: Verdana, Helvetica, sans-serif;		/* Set font family */
+       font-size: 2.25em;	/* Set font size */
+       color: #32140B;		/* Set text color */
+       text-align: center;     /* Align text center */
+       clear: right;     /* Clear elements which float right */
+    }
+    h3 {
+       font-family: Verdana, Helvetica, sans-serif;		/* Set font family */
+       font-size: 1.75em;	/* Set font size */
+       color: #9B3154; /* Set text color */
+    }
+    h4 {
+        font-size: 1.7em;    /* Set font size */
+        font-family: "Times New Roman", serif;		/* Set font family */
+        color: #6B7641;      /* Change color once you have new palette*/
+        margin: 25px 0 15px 0;     /* Set top, right, bottom, and left margins */
+    }
+    /* Styles for the lists */
+    ul {
+        margin-bottom: 25px;    /* Set bottom margin */
+        margin-top: 1px;     /* Set top margin */
+        list-style-type: none;     /* Removes bullets */
+    }
+    li {
+        padding: 6px 0;    /* Set top and bottom padding to 6px and left and right padding to 0 */
+    }
+    /* Form Styles */
+    form {
+        width: 80%;     /* Set width */
+        display: flex;      /* Use flexbox */
+        flex-direction: column;     /* Arrange items in a column */
+    }
+    input[type="submit"] {
+        width: 9em;     /* Set width */
+    }
+    fieldset {
+        margin-top: 10px;
+        display: flex;      /* Use flexbox */
+        flex-direction: column;     /* Arrange items in a column */
+        width: 100%;        /* Set width */
+    }
+    label, input, textarea {
+        margin: 5px 0;      /* Set margin */
+    }
+    /* Styles for Tables */
+    table {
+        border: 3px solid #6F2049;      /* Set border */
+        width: 95%;     /* Set width */
+        margin: 10px auto;      /* Set margin */
+        border-collapse: collapse;      /* Set border to collapse */
+    }
+    th, td {
+        border: 1px solid #6F2049;      /* Set border */
+        padding: 8px;       /* Set padding */
+        font-size: 1.1em;       /* Set font-size */
+    }
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    /* Styles for the Footer */
+    footer {
+        background-color: #57140F;		/* Set background color */
+        padding: 15px;			/* Set padding */
+        text-align: center;		/* Align text center */
+        font-size: small;    /* Set font size */
+        font-style: italic;		/* Set font style */
+        color: #FACF9C;			/* Set text color */
+        margin-top: .83em;		/* Make top margin match h2 default */
+    }
+/* Styles for the Classes */
+    /* Styles for the Event Wrapper */
+    .eventwrap {
+        box-sizing: border-box;     /* Include padding and border in width and height of the event wraps */
+        margin: 0 1% 30px 1%;       /* Set margins */
+        width: 48%;     /* Set width */
+        height: auto;       /* Set auto */
+        background-color: #F5D2B7;		/* Set background color */
+        color: #32140B;		/* Set text color */
+        float: left;		/* Float left */
+        display: flex;		/* Use flexbox */
+        flex-direction: column;      /* Display items in a column */
+        overflow: auto;     /* Clear a float */
+        border: outset 5px #9EC3E6;		/* set border */
+    }
+    /* Styles for the Flex No-Wrap */
+	.flexnowrap {
+		display: flex;      /* Use flexbox */
+		flex-direction: row;        /* Display items in a row */
+		flex-wrap: nowrap;      /* Make it all one line */
+        overflow-y: auto;     /* Add horizontal scroll bar */
+        width: 95%;     /* Make it less wide than the rest of the page */
+        margin: auto;       /* Center on page */
+        border: double 5px #F27DA4;     /* Add border */
+        border-radius: 8px;     /* round border corners */
+	}
+    /* Styles for the mini events */
+	.minievent { /* Make grid? */
+        box-sizing: border-box;     /* Include padding and border in width and height of the event wraps */
+        margin: 20px 10px;       /* Set margins */
+		padding: 0 5px 10px 5px;
+        min-width: 270px;     /* Set width */
+        height: 415px;       /* Set auto */
+        background-color: #F5D2B7;		/* Set background color */
+        color: #32140B;		/* Set text color */
+        display: flex;		/* Use flexbox */
+        flex-direction: row;      /* Display items in a row */
+        border: outset 6px #9EC3E6;		/* Set border */
+    }
+	.minievent a {
+        text-decoration: none;      /* Remove underline in the minievent */
+    }
+	/* Styles for the Subsections */
+	.subsection {
+        width: 75%;     /* Set width to 75% parent container */
+        border: dashed 3px #57140F;     /* Set border */
+        border-radius: 5%;      /* Set border radius */
+        padding-left: 50px;      /* Set left padding */
+    }
+    .subsection hr {
+        width: 70%;     /* Set width */
+        margin: auto;       /* Center on page */
+        border-top: dotted 2px #D74777;     /* set top border/horizontal rule color */
+    }
+    .subsection p {
+        padding-left: 3%;       /* Set left padding */
+        padding-right: 3%;      /* Set right padding */
+    }
+    /* Style to center */
+    .center {
+        text-align: center;     /* Align text center */
+        margin: auto;       /* center on the page */
+        margin-top: 15px;       /* set top margin */
+        padding: 8px;       /* set padding */
+    }
+    /* Style for normal text */
+    .normaltext {
+        color: #32140B;     /* Set text color */
+    }
+    /* Styles for the event images */
+    .eventimg {
+        float: none;		/* Prevent floating and stop text wrap */
+        display: block;		/* Put images on their own block of the webpage */
+        margin: 15px auto;       /* center image */
+        height: auto;       /* Make ration stay the same as width changes */
+        width: 97%;        /* Set width to 90% parent element */
+    }
+    /* Styles for the mini event images */
+	.minieventimg {
+        float: none;		/* Prevent floating and stop text wrap */
+        display: block;		/* Put images on their own block of the webpage */
+        margin: 15px auto;       /* center image */
+        height: 220px;       /* set height */
+        width: 220px;        /* Set width */
+    }
+    /* Styles for the room descriptions */
+    .caption {
+        font-style: italic;     /* Set font style to italic */
+        font-size: 1.2em;    /* Set font size */
+        font-family: "Times New Roman", serif;		/* Set font family */
+        text-align: center;     /* Align the text to center */
+        margin: 0;      /* Set all margins to 0 */
+        color: #682742;     /* Set text color */
+    }
+    /* Styles for Names on the Events page */
+    .name {
+        font-weight: bold;      /* Set font weight */
+    }
+    /* Styles for the event descriptions */
+    .eventdesc {
+        margin-left: 5%;        /* Set left margin */
+        margin-right: 5%;       /* Set left margin */
+    }
+	/* Styles for Mobile */
+	.mobile {
+		display: none;		/* Hide element */
+	}
+	/* Styles for Desktop */
+	.desktop {
+		display: inline;		/* Display as inline element */
+    }
+
+    /* Styles for buttons/tables */
+    .centerButton {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* Styles for the IDs */
+    /* Styles for the Wrapper */
+    #wrapper {
+        min-width: 850px;		/* Set minimum width to 850px */
+        max-width: 1200px;		/* Set maximum width to 1200px */
+        margin: 50px auto 10px auto;		/* Set margins on all sides to auto */
+        background-color: #FCFFE6;		/* Set background color for Wrapper */
+        color: #32140B;		/* Set text color for the text within the Wrapper ID */
+        border: solid 6px #D74777;		/* Set left border */
+        border-top: solid 10px #D74777;		/* Set top border */
+    }
+    /* Styles for room images */
+    #roomimage {
+        float: none;		/* Prevent floating and stop text wrap */
+        display: block;		/* Put room images on their own block of the webpage */
+        margin: 10px auto;		/* Add top margin and center image in parent element */
+        border-radius: 10%;     /* Round corners of image 10% */
+        max-width: 85%;      /* Set maximum width to 85% of parent element */
+        height: auto;     /* Make ratio stay the same as image width changes */
+    }
+    /* Styles for home image */
+    #outsideblossom {
+        width:68%;     /* Set width to 65% of parent element */
+        height:auto;      /* Make ratio stay the same as image width changes */
+        border-radius: 150px;      /* Round corners 150px */
+        float: right;		/* Float element to the right */
+        display: block;		/* Put element on its own block of the webpage */
+        margin: 30px 30px 25px 20px;     /* Set top, right, bottom, and left margins */
+        box-sizing: border-box;     /* Include padding and border in width and height of the event wraps */
+        border: double 8px #57140F;		/* set border style, size, and color */
+    }
+    /* Style for home tag */
+    #hometag {
+        margin-top: 45px;    /* Set top margin */
+        margin-left: 30px;      /* Set left margin */
+        font-style: italic;     /* Set font style to italic */
+        padding-right: 72%;     /* Set right padding */
+    }
+    #library {
+		box-sizing: border-box;     /* Include padding and border in width and height of the event wraps */
+		float: left;		/* Set float */
+		width: 50%;		/* Set width */	
+		border-radius: 3%;		/* Set border radius */
+		margin-top: 25px;		/* Set top margin */
+		margin-bottom: 25px;		/* Set bottom margin */
+	}
+	#righthomefeature {
+		box-sizing: border-box;     /* Include padding and border in width and height of the event wraps */
+		float: right;		/* Set float */
+		width: 45%;		/* Set width */
+		margin-top: 25px;		/* Set top margin */
+	}
+	#clearboth {
+		clear: both;		/* clear floats */
+	}
+
+
+	/* Styles for the tables */
+	#firstFloorTable, #secondFloorTable, #outdoorSuiteTable {
+		visibility: collapse; 		/* Hides element */
+        margin-top: 0;
+        margin-bottom: 4%;
+        width: 100%;
+        border-top: #32140B;
+	}
+
+    #firstFloorButton, #secondFloorButton, #outdoorSuiteButton {
+        font-family: Garamond, "Times New Roman", serif;		/* Set font family */
+        font-size: 1.75em;
+        margin: 20px 0 0 0;
+        padding: 1.5%;
+        background-color: #32140B;
+        color: #FBF4F4;
+        border: none;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+    }	
+    
+    main #firstFloorButton:hover, main #secondFloorButton:hover, main #outdoorSuiteButton:hover {
+        background-color: #4e2314;
+        border: solid 5px #32140B;
+    }
+    
+	
+    
+/* Media Query for Mobile (Tablet) */
+@media (max-width: 900px) {
+    /* Styles for the Elements */
+		/* Set all elements to border box */
+		* {
+			box-sizing: border-box; 		/* Include padding and margins in width */
+		}
+        /* Styles for the Body */
+		body { 
+			background-image: none;		/* Set background image */
+			max-width: 900px;		/* Set minimum width */
+			min-width: 360px;		/* Set maximum width */
+			margin: 0;		/* Set margins on all sides to auto */
+            /* background-color: red;      /* How do I get rid of this sidebar on the home page??? */
+		}
+		/* Styles for the Main */
+		main {
+			padding-left: 3%;     /* Set left padding */
+			padding-right: 3%;     /* Set right padding */
+			padding-top: 0;     /* Set top padding to 0 */
+            min-height: 700px;     /* Set minimum height */
+            min-width: 360px;		/* Set maximum width */
+            max-width: 100%;		/* Set minimum width */
+		}
+		main img {
+			padding: 0;		/* Set padding */ 
+			position: relative;		/* Set position to relative */
+			width: 106.3%;		/* Set width to include padding of main and a little more to cover the edges */
+			left: -3.15%;		/* move image position to the left until it covers full screen */
+		}
+		hr {
+			margin: 0;     /* Set margin */
+			padding: 0;     /* Set padding */
+		}
+        h1 {
+            font-size: 4em;		/* Set font size for h1 */
+			height: 10%;     /* Set height */
+			padding: 20px;     /* Set padding */
+			margin: 0;     /* Set margins */
+        }
+		h2 {
+			font-size: 2em;	/* Set font size */
+		}
+		h4 {
+			font-size: 1.6em;    /* Set font size */
+		}
+        /* Styles for Navigation */
+        nav {
+            display: flex;      /* Use flexbox */
+            flex-direction: column;     /* Arrange items in a column */
+            padding: 0;		/* Set padding */
+            font-size: 1.5em;		/* Set font size */
+            position: static;    /* Make nav bar scroll with the rest of the screen */
+			border-bottom: #FACF9C 3px solid;     /* add bottom border to links */
+        }
+        nav a {
+			border-top: #FACF9C 3px solid;     /* add top border to links */
+			width: 100%;		/* Set width */
+			padding: 2px 0;		/* Set padding */
+        }
+
+        /* Styles for the table */
+        table {
+            border: 4px solid #6F2049;      /* Set border */
+            border-left: none;
+            border-right: none;
+            width: 100vw;
+        }
+        th, td {
+            padding: 5px;     /* Set padding */
+            font-size: 1em;     /* Set font size */
+
+        }
+        main table {
+            left: -3.15%;
+            position: relative;
+            margin: 0;
+        }
+        
+        
+    /* Styles for the Classes */
+		/* Styles for Mobile */
+		.mobile {
+			display: inline;		/* Display as inline element */
+		}
+		/* Styles for Desktop */
+		.desktop {
+			display: none;		/* Hide element */
+		}
+		/* Styles for the Event Wrapper */
+		.eventwrap {
+			margin: 0 0 1% 0;       /* remove all margins but bottom, set bottom margin 1% */
+			position: relative;		/* Set position to relative */
+			width: 106.3%;		/* Set width to include padding of main and a little more to cover the edges */
+			left: -3.15%;		/* move image position to the left until it covers full screen */
+			border: none;		/* Remove border/remove side borders */
+			border-top: solid 5px #9EC3E6;		/* set top border */
+			border-bottom: solid 5px #9EC3E6;		/* set bottom border */
+		}
+		/* Styles for the event images */
+		.eventimg {
+			width: 103.14%;
+		}
+		/* Styles for the Flex No-Wrap */
+		.flexnowrap {
+			flex-wrap: wrap;      /* Make it all one line */
+            width: 78%;     /* Set width */
+		}
+		/* Styles for the mini events */
+		.minievent { 
+			margin: 10px auto;       /* Set margins */
+			padding: 0 5px 10px 5px;        /* Set padding */
+			width: 270px;       /* Set width */
+			height: 390px;       /* Set height */
+            align-items: center;        /* Align items center */
+            text-align: center;        /* Align text center */
+		}
+		.minieventimg {
+			position: static;		/* Set position static, unlike other main imgs which are relative  */
+		}
+    /* Styles for the IDs */
+        /* Styles for the Wrapper */
+        #wrapper {
+            border: none;       /* Removes border from wrapper */
+            max-width: 100%;		/* Set maximum width */
+            min-width: 360px;     /* Set minimum width */
+            margin: 0;		/* Set margins on all sides to 0 */
+			padding: 0;		/* Set padding */
+        }
+		/* Styles for home image */
+		#outsideblossom {
+			border-radius: 0;      /* Round corners 150px */
+			float: none;		/* Remove float */
+			margin: 0;     /* Set top, right, bottom, and left margins */
+			border: none;		/* remove border */
+			width: 106.3%;		/* Set width */
+		}
+	    /* Style for home tag */
+		#hometag {
+			margin-top: 25px;    /* Shorten top margin */
+			margin-left: 30px;      /* Set left margin */
+            margin-right: 30px;      /* Set right margin */
+			padding-right: 0;     /* Remove right padding */
+		}
+		/* Styles for room images */
+		#roomimage {
+			margin: 0;		/* Set margin */
+			border-radius: 0;     /* Set border radius */
+			max-width: 106.3%;      /* Set maximum width */
+		}
+		#library {
+			float: none;		/* Set float to none */
+			width: 106.3%;		/* Set Width */ 
+			border-radius: 0;		/* Set border radius */
+			margin-top: 15px;		/* Set top margin */
+			margin-bottom: 15px;		/* Set bottom margin */
+		}
+		#righthomefeature {
+			float: none;		/* Set float */
+			width: 100%;		/* Set width */
+			margin-top: 25px;		/* Set top margin */
+		}
+
+        /*Styles for the table and its buttons*/
+        #firstFloorButton, #secondFloorButton, #outdoorSuiteButton {
+            width: 100vw;
+            left: -3.15%;
+       
+        }
+
+        #firstFloorTable, #secondFloorTable, #outdoorSuiteTable {
+            width: 100vw;
+            margin: 0 auto 5px auto;
+       
+        }
+        /* #firstFloorTable, #secondFloorTable {
+            margin: 0 auto 5px auto;
+        } */
+
+        #outdoorSuiteTable {
+            margin-bottom: 35px;
+        } 
+
+}
