@@ -12,7 +12,7 @@ function firstFloorButton() {
 		console.log("button clicked to collapse");
 		button.style.visibility = "collapse";
 	}
-	// else if table id is visible
+	// else if table id is visible 
     else {
 		// onclick, set the table with the id to be non-visible
         console.log("button clicked to visible");
