@@ -112,7 +112,7 @@ function validateForm() {
         const message = document.getElementById('message').value.toLowerCase();
         
         // create the regular expression to check that the email address isn't @clubemp
-        const emailRegex = /(@clubemp)/gm;
+        const emailRegex = /(@clubemp.com)/gm;
 
 
         // Validate fields have information, shouldn't be necessary since both name fields are required but included just in case
@@ -158,7 +158,7 @@ function validateForm() {
         // Validate the email address is not from the domain clubemp
         else if (emailRegex.test(myEmail.value)) {
             // Inform user their email cannot be from the clubemp domain
-            myEmail.setCustomValidity("Email cannot be from the 'clubemp' domain.")
+            myEmail.setCustomValidity("Email cannot be from the 'clubemp.com' domain.")
             // return false from the validation, meaning the content won't submit
             return false;
         }
