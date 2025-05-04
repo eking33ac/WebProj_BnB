@@ -240,8 +240,7 @@ function validateForm() {
         window.alert("Validation didn't work, so no message can be sent. Feel free to be angry about this.")
         // Don't let user submit
         return false;
-    } 
-
+    }
 }
 
 // create function to validate zipcode in real-time
@@ -271,8 +270,8 @@ function zipListener() {
     }
     // otherwise, continue function
     else {
-        warning.innerHTML = ""
-        
+        // remove the warning text
+        warning.innerHTML = "";
 
         // create XML object
         let xhttp = new XMLHttpRequest();
@@ -295,25 +294,25 @@ function zipListener() {
             if (this.readyState == 4 && this.status == 200 && this.responseText.includes(`"results":{`)) {
                 // remove warning innerhtml
                 warning.innerHTML = "";
-
+                // note which if-elif-else ran
                 console.log("Ran if: 1")
                 // remove custom validities
                 zipElem.setCustomValidity("");
-    
-                console.log("Initial response text:\n" + this.responseText)
-                console.log("Initial status and object properties " + this.statusText)
-                let response = JSON.parse(this.responseText);
-                console.dir("JSONed response text:\n" + response);
-                console.log("JSONed status and object properties " + response);
+                // log the initial information
+                console.log("Response Text: " + this.responseText)
             }
             // if the status is 404
             else if (this.status == 404) {
+                // note which if-elif-else ran
                 console.log("Ran else if: 2")
+                // warn that the page was not found
                 console.warn("Zipcode Validation Page not found.")
-                warning.innerHTML = "Zipcode Validation could not connect. Try again. If error persists, check server connection."
+                // tell user the page was not found
+                warning.innerHTML = "Zipcode Validation Page was not found. Try again. If error persists, check server connection."
             }
             // if something else is wrong
             else {
+                // note which if-elif-else ran
                 console.log("Ran else: 3")
                 // log/warn a failure
                 console.warn("Zipcode Validation Failed. Check Zipcode Input and Server Connection.");
