@@ -84,6 +84,12 @@ if (document.URL.includes("contact.html")) {
     document.getElementById("reservation").addEventListener("change", validateForm);
     // validate the whole form when first name has been changed
     document.getElementById("myEmail").addEventListener("change", validateForm);
+    // add normal validation for the zip code
+    document.getElementById("zip").addEventListener("change", validateForm);
+    // add zipcode verification as soon as user starts typing it
+    document.getElementById("zip").addEventListener("keyup", zipListener);
+    // validate on country input
+    document.getElementById("country").addEventListener("change", validateForm);
 }
 
 
@@ -94,7 +100,7 @@ if (document.URL.includes("contact.html")) {
 
 function validateForm() {
     // Attempt to validate form
-    try {
+    try { 
         // Retrieve values from form fields
         // Fetch first name element
         const firstName = document.getElementById('firstName');
@@ -110,9 +116,15 @@ function validateForm() {
         const subject = document.getElementById('subject').value.toLowerCase();
         // Fetch the message string
         const message = document.getElementById('message').value.toLowerCase();
-        
+        // fetch country input element
+        const country = document.getElementById("country")
+        // fetch zipcode input element
+        const zip = document.getElementById("zip")
+
         // create the regular expression to check that the email address isn't @clubemp
         const emailRegex = /(@clubemp.com)/gm;
+        // create regex to ensure message contains only letters (for country)
+        const onlyLettersRgx = /^[a-zA-Z]+$/
 
 
         // Validate fields have information, shouldn't be necessary since both name fields are required but included just in case
@@ -168,7 +180,30 @@ function validateForm() {
             myEmail.setCustomValidity("");
         }
         
+        // verify the country name is extactly two characters long.
+        if (country.value.trim().length != 2) {
+            // set custom validity to warn that the name must be 2 characters long.
+            country.setCustomValidity("Country must be 2 characters long. e.g. US, UK, CA, FR, etc.")
+        }
+        // verify the country name is only alpha characters.
+        else if ( !( onlyLettersRgx.test(country.value.trim()) ) ) {
+            // tell user to inlcude only alphabet characters from a-z
+            country.setCustomValidity("Country may only include letters. i.e. a-z and A-Z.")
+        }
+        else {
+            // remove validity rules
+            country.setCustomValidity("");
+        }
 
+        // verify zipcode is exactly 5 digits
+        if (zip.value.length != 5) {
+            // set custom validity to warn that the name must be 2 characters long.
+            zip.setCustomValidity("Zip Code must be 5 digits long.")
+        }
+        else {
+            // remove validity rules
+            zip.setCustomValidity("");
+        }
 
 
         // declare opening date to compare to
@@ -206,5 +241,132 @@ function validateForm() {
         // Don't let user submit
         return false;
     }
-
 }
+
+// create function to validate zipcode in real-time
+function zipListener() {
+    //Using the form on your website, build a ZIP code verifier using AJAX. 
+    // Your program should start verifying the ZIP code against a database
+    // or file on a server as soon as the user starts entering the ZIP code
+
+    // get the value of the zipcode field without leading or trailing spaces
+    let zipcode = document.getElementById("zip").value.trim();
+    // fetch country input element value and remove trailing and leading whitespace
+    let country = document.getElementById("country").value.trim();
+    // put api key in a variable
+    const apiKey = `zip_live_N7ElHokqIV6rz7lLkPMVin1JIo5kjNCJfpBwA6cy`;
+    // declare variable to hold the zipElem element
+    let zipElem = document.getElementById("zip");
+
+    // create warning div
+    let warning = document.getElementById("warning");
+    // set warning text color
+    warning.style.color = "red";
+
+    // check if country is falsy by seeing if not-country is truthy
+    if (!country || country.length != 2) {
+        // tell user to include accurate country before zipcode.
+        warning.innerHTML = "Include accurate country before zipcode.";
+    }
+    // otherwise, continue function
+    else {
+        // remove the warning text
+        warning.innerHTML = "";
+
+        // create XML object
+        let xhttp = new XMLHttpRequest();
+        // open server request
+        xhttp.open("GET", `http://api.zipcodestack.com/v1/search?apikey=${apiKey}&codes=${zipcode}&country=${country}`, true);
+        // send server request
+        xhttp.send();
+
+        // when the server sends information back
+        xhttp.onreadystatechange = function() {
+            // mark the processes
+            console.log("Ready state status: " + this.readyState);
+        }
+        
+        xhttp.onloadend = function() {
+            // mark the process
+            console.log("loadend");
+            console.log("Results: " + this.results)
+            // if it is valid information
+            if (this.readyState == 4 && this.status == 200 && this.responseText.includes(`"results":{`)) {
+                // remove warning innerhtml
+                warning.innerHTML = "";
+                // note which if-elif-else ran
+                console.log("Ran if: 1")
+                // remove custom validities
+                zipElem.setCustomValidity("");
+                // log the initial information
+                console.log("Response Text: " + this.responseText)
+            }
+            // if the status is 404
+            else if (this.status == 404) {
+                // note which if-elif-else ran
+                console.log("Ran else if: 2")
+                // warn that the page was not found
+                console.warn("Zipcode Validation Page not found.")
+                // tell user the page was not found
+                warning.innerHTML = "Zipcode Validation Page was not found. Try again. If error persists, check server connection."
+            }
+            // if something else is wrong
+            else {
+                // note which if-elif-else ran
+                console.log("Ran else: 3")
+                // log/warn a failure
+                console.warn("Zipcode Validation Failed. Check Zipcode Input and Server Connection.");
+                //  set the validity to indicate failure
+                warning.innerHTML= "Zipcode Validation Failed. Ensure country and zipcode are correct.\nIf error continues, check server connections.";
+            }
+        }
+    }
+}
+
+/*
+https://api.zipcodestack.com/v1/search?apikey=zip_live_N7ElHokqIV6rz7lLkPMVin1JIo5kjNCJfpBwA6cy&codes=79101&country=US
+https://api.zipcodestack.com/v1/locations?apikey=zip_live_N7ElHokqIV6rz7lLkPMVin1JIo5kjNCJfpBwA6cy&codes=79101&country=US
+https://api.zipcodestack.com/v1/search?apikey=zip_live_N7ElHokqIV6rz7lLkPMVin1JIo5kjNCJfpBwA6cy&codes=79101&country=US
+
+*/
+
+
+/* Zipcode Fetch API
+
+// create function to validate zipcode in real-time
+function zipListener() {
+    // get the value of the zipcode field without leading or trailing spaces
+    let zipcode = document.getElementById("zip").value.trim();
+    // put api key in a variable
+    const apiKey = `zip_live_N7ElHokqIV6rz7lLkPMVin1JIo5kjNCJfpBwA6cy`
+    let zipElem = document.getElementById("zip");
+    // fetch country input element value and remove trailing and leading whitespace
+    let country = document.getElementById("country").value.trim();
+
+    // check if country is falsy by seeing if not-country is truthy
+    if (!country) {
+        // tell user to include accurate country before zipcode.
+        zipElem.setCustomValidity("Include accurate country before zipcode.")
+    }
+    // otherwise, continue function
+    else {
+        // remove custom validities
+        zipElem.setCustomValidity("");
+        
+        fetch(`http://api.zipcodestack.com/v1/search?apikey=${apiKey}&codes=${zipcode}&country=${country}`)
+        // convert api response
+        .then(response => response.json())
+        // log the data in the console
+        .then(data => { console.log(data); })
+        // continue as normal
+        // if something goes wrong
+        .catch( data => {
+            // log/warn a failure
+            console.warn("Zipcode Validation Failed.");
+            //  set the validity to indicate failure
+            zipElem.setCustomValidity("Zipcode Validation Failed. Ensure country and zipcode are correct.")
+        } );
+    }
+}
+
+*/
