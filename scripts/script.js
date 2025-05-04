@@ -100,7 +100,7 @@ if (document.URL.includes("contact.html")) {
 
 function validateForm() {
     // Attempt to validate form
-    /* try { */
+    try { 
         // Retrieve values from form fields
         // Fetch first name element
         const firstName = document.getElementById('firstName');
@@ -235,14 +235,14 @@ function validateForm() {
     }
     
     // if exception is thrown or something else goes wrong, catch
-   /* catch {
+    catch {
         // tell user something went horribly wrong.
         window.alert("Validation didn't work, so no message can be sent. Feel free to be angry about this.")
         // Don't let user submit
         return false;
     } 
 
-} */
+}
 
 // create function to validate zipcode in real-time
 function zipListener() {
